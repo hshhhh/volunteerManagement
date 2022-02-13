@@ -1,12 +1,18 @@
 import 'antd/dist/antd.css'
 import './login.css'
 import logo from './images/logo.png'
-import {Button, Form, Input} from "antd";
+import {Button, Form, Input, message} from "antd";
 import {UserOutlined, LockOutlined} from '@ant-design/icons';
+import {useNavigate} from "react-router-dom";
 
 export default function () {
+  const navigate = useNavigate();
   const onFinish = (values) => {
-    console.log(values)
+    if(values.username === 'admin' && values.password === 'admin') {
+      navigate('/')
+    } else {
+      message.error('账号或密码错误')
+    }
   };
 
   return(
