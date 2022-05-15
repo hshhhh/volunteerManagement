@@ -1,8 +1,9 @@
 import {Layout, Menu, Breadcrumb, Dropdown} from 'antd';
-import {UserOutlined, LaptopOutlined, NotificationOutlined, DownOutlined} from '@ant-design/icons';
+import {TeamOutlined, ExceptionOutlined, NotificationOutlined, DownOutlined, UngroupOutlined} from '@ant-design/icons';
 import './admin.css'
 import logo from '../../assets/images/logo-bai.png'
 import defaultHeadImg from '../../assets/images/headImg.png'
+import HeadImg from '../../assets/images/logo.png'
 import {Outlet} from "react-router-dom";
 
 const {SubMenu} = Menu;
@@ -25,12 +26,12 @@ const menu = (
 export default function () {
   return (
     <Layout className='container'>
-      <header>
+      <header className='header'>
         <img src={logo}/>
         <Dropdown overlay={menu}>
           <a className="ant-dropdown-link" onClick={e => e.preventDefault()} style={{color: "white"}}>
-            <img src={defaultHeadImg}/>
-            username <DownOutlined/>
+            <img src={HeadImg}/>
+            校青协 <DownOutlined/>
           </a>
         </Dropdown>
       </header>
@@ -43,9 +44,11 @@ export default function () {
             defaultOpenKeys={['sub1']}
             style={{height: '100%', borderRight: 0}}
           >
-            <Menu.Item icon={<UserOutlined/>} key="1">名单</Menu.Item>
-            <Menu.Item icon={<LaptopOutlined/>} key="2">黑名单</Menu.Item>
-            <Menu.Item icon={<NotificationOutlined/>} key="3">征信管理条例</Menu.Item>
+            <Menu.Item icon={<TeamOutlined />} key="1">名单</Menu.Item>
+            <Menu.Item icon={<ExceptionOutlined />} key="2">黑名单</Menu.Item>
+            <Menu.Item icon={<ExceptionOutlined />} key="3">活动中心</Menu.Item>
+            <Menu.Item icon={<UngroupOutlined />} key="4">组织管理</Menu.Item>
+            <Menu.Item icon={<NotificationOutlined/>} key="5">信用管理条例</Menu.Item>
             {/*<SubMenu key="sub" icon={<NotificationOutlined/>} title="subnav 3">*/}
             {/*  <Menu.Item key="4">option3</Menu.Item>*/}
             {/*  <Menu.Item key="5">option4</Menu.Item>*/}

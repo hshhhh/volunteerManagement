@@ -1,7 +1,7 @@
 .container {
     height: 100vh;
 }
-header {
+.header {
     height: 10vh;
     background-color: #001529;
     display: flex;
@@ -9,11 +9,11 @@ header {
     align-items: center;
     padding: 0 40px;
 }
-header img {
+.header img {
     height: 45px;
     width: 350px;
 }
-header a img {
+.header a img {
     height: 5vh;
     width: 5vh;
     border-radius: 50%;
@@ -25,6 +25,8 @@ header a img {
 .myContent {
     background-color: #ffffff;
     overflow: scroll;
+    padding: 20px;
+    box-sizing: border-box;
 }
 .myContent::-webkit-scrollbar {
     /*滚动条整体样式*/
