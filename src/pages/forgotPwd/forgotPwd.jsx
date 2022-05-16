@@ -1,5 +1,5 @@
 import 'antd/dist/antd.css'
-import './register.css'
+import './forgotPwd.css'
 import logo from './images/logo.png'
 import { Button, Form, Input, message } from "antd";
 import { UserOutlined, LockOutlined, PhoneOutlined, VerifiedOutlined } from '@ant-design/icons';
@@ -16,11 +16,11 @@ export default function () {
       message.error('账号或密码错误')
     }
   };
-  const gotoLogin = (values) => {
+  const gotoLogin = () => {
     navigate('/login')
   };
-  const gotoForgotPwd = (values) => {
-    navigate('/forgotPwd')
+  const gotoRegister = () => {
+    navigate('/register')
   };
   let t = 60
   const [isSend, setIsSend] = useState(false)
@@ -51,13 +51,13 @@ export default function () {
   }, [isSend])
 
   return (
-    <div className="register">
-      <header className="register-header">
+    <div className="forgotPwd">
+      <header className="forgotPwd-header">
         <img src={logo} alt={logo} />
         <h1>珠科志愿者系统</h1>
       </header>
-      <section className="register-content">
-        <h2>注册账户</h2>
+      <section className="forgotPwd-content">
+        <h2>修改密码</h2>
         <div className="login-form">
           <Form name="normal_login" className="login-form" onFinish={onFinish}>
             <Form.Item name="username"
@@ -74,11 +74,11 @@ export default function () {
               rules={[
                 {
                   required: true,
-                  message: '请输入密码!',
+                  message: '请输入新密码!',
                 },
               ]}
             >
-              <Input prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="密码" />
+              <Input prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="新密码" />
             </Form.Item>
             <Form.Item name="confirmPwd"
               rules={[
@@ -88,7 +88,7 @@ export default function () {
                 },
               ]}
             >
-              <Input prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="再次输入密码" />
+              <Input prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="再次输入新密码" />
             </Form.Item>
             <Form.Item name="phone"
             >
@@ -114,8 +114,8 @@ export default function () {
               ]}
               extra={
                 <>
-                  <a className="register-gotoLogin" onClick={gotoLogin}>已有账户？去登陆</a>
-                  <a className="register-gotoForgotPwd" onClick={gotoForgotPwd}>忘记密码？</a>
+                  <a className="forgotPwd-gotoLogin" onClick={gotoLogin}>已有账户？去登陆</a>
+                  <a className="forgotPwd-gotoRegister" onClick={gotoRegister}>没有账户？去注册</a>
                 </>
               }
             >

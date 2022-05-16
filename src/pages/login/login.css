@@ -37,12 +37,12 @@
 .login-form .login-form-button {
     width: 100%;
 }
-.register-gotoRegister {
+.login-gotoRegister {
     margin-top: 5px;
     color: #1890ff;
     float: left;
 }
-.forgotPwd {
+.login-gotoForgotPwd {
     margin-top: 5px;
     color: #1890ff;
     float: right;

@@ -18,6 +18,9 @@ export default function () {
   const gotoRegister = (values) => {
     navigate('/register')
   };
+  const gotoForgotPwd = (values) => {
+    navigate('/forgotPwd')
+  };
 
   return (
     <div className="login">
@@ -48,8 +51,8 @@ export default function () {
               ]}
               extra={
                 <>
-                  <a className="register-gotoRegister" onClick={gotoRegister}>没有账户？注册一个</a>
-                  <div className="forgotPwd">忘记密码？</div>
+                  <a className="login-gotoRegister" onClick={gotoRegister}>没有账户？注册一个</a>
+                  <a className="login-gotoForgotPwd" onClick={gotoForgotPwd}>忘记密码？</a>
                 </>
               }
             >

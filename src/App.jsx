@@ -3,6 +3,7 @@
   import Admin from './pages/admin/admin'
   import Login from './pages/login/login'
   import Register from './pages/register/register'
+  import ForgotPwd from './pages/forgotPwd/forgotPwd'
   import List from './pages/admin/list/list'
   import Blacklist from './pages/admin/blacklist/blacklist'
   import Regulations from './pages/admin/regulations/regulations'
@@ -12,6 +13,7 @@
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgotPwd" element={<ForgotPwd />} />
         <Route path="/" element={<Admin />}>
           <Route path="/list" element={<List />}></Route>
           <Route path="/blacklist" element={<Blacklist />}></Route>
