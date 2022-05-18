@@ -1,29 +1,38 @@
-import {Layout, Menu, Breadcrumb, Dropdown} from 'antd';
+import {Layout, Menu, Breadcrumb, Dropdown, message} from 'antd';
 import {TeamOutlined, ExceptionOutlined, NotificationOutlined, DownOutlined, UngroupOutlined} from '@ant-design/icons';
 import './admin.css'
 import logo from '../../assets/images/logo-bai.png'
 import defaultHeadImg from '../../assets/images/headImg.png'
 import HeadImg from '../../assets/images/logo.png'
 import {Outlet} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const {SubMenu} = Menu;
 const {Header, Content, Sider} = Layout;
-const menu = (
-  <Menu theme="dark">
-    <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com" style={{fontSize: "10px"}}>
-        修改资料
-      </a>
-    </Menu.Item>
-    <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com" style={{fontSize: "10px"}}>
-        退出登录
-      </a>
-    </Menu.Item>
-  </Menu>
-);
+
 
 export default function () {
+  const navigate = useNavigate();
+
+  const gotoLogin = (values) => {
+    message.success('您已退出登录')
+    navigate('/login')
+  };
+
+  const menu = (
+    <Menu theme="dark">
+      <Menu.Item>
+        <a style={{fontSize: "10px"}}>
+          修改资料
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a onClick={gotoLogin} style={{fontSize: "10px"}}>
+          退出登录
+        </a>
+      </Menu.Item>
+    </Menu>
+  );
   return (
     <Layout className='container'>
       <header className='header'>
@@ -48,7 +57,8 @@ export default function () {
             <Menu.Item icon={<ExceptionOutlined />} key="2">黑名单</Menu.Item>
             <Menu.Item icon={<ExceptionOutlined />} key="3">活动中心</Menu.Item>
             <Menu.Item icon={<UngroupOutlined />} key="4">组织管理</Menu.Item>
-            <Menu.Item icon={<NotificationOutlined/>} key="5">信用管理条例</Menu.Item>
+            <Menu.Item icon={<UngroupOutlined />} key="5">积分商城</Menu.Item>
+            <Menu.Item icon={<NotificationOutlined/>} key="6">信用管理条例</Menu.Item>
             {/*<SubMenu key="sub" icon={<NotificationOutlined/>} title="subnav 3">*/}
             {/*  <Menu.Item key="4">option3</Menu.Item>*/}
             {/*  <Menu.Item key="5">option4</Menu.Item>*/}

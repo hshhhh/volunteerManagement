@@ -124,7 +124,7 @@ export default function () {
             </Form.Item>
             <Form.Item>
               <Button type="primary" htmlType="submit" className="login-form-button">
-                注册
+                确认修改
               </Button>
             </Form.Item>
           </Form>
