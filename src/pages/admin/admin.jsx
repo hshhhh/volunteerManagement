@@ -18,6 +18,36 @@ export default function () {
     message.success('您已退出登录')
     navigate('/login')
   };
+  const onClick = (values) => {
+    const key = values.key
+    console.log(key)
+    switch (key) {
+      case '1': {
+        navigate('/list')
+        break
+      }
+      case '2': {
+        navigate('/blacklist')
+        break
+      }
+      case '3': {
+        navigate('/list')
+        break
+      }
+      case '4': {
+        navigate('/list')
+        break
+      }
+      case '5': {
+        navigate('/list')
+        break
+      }
+      case '6': {
+        navigate('/regulations')
+        break
+      }
+    }
+  };
 
   const menu = (
     <Menu theme="dark">
@@ -51,6 +81,7 @@ export default function () {
             mode="inline"
             defaultSelectedKeys={['1']}
             defaultOpenKeys={['sub1']}
+            onClick={onClick}
             style={{height: '100%', borderRight: 0}}
           >
             <Menu.Item icon={<TeamOutlined />} key="1">名单</Menu.Item>
@@ -67,9 +98,9 @@ export default function () {
         </Sider>
         <Layout style={{padding: '0 24px 24px'}}>
           <Breadcrumb style={{margin: '16px 0'}}>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            {/* <Breadcrumb.Item>Home</Breadcrumb.Item>
             <Breadcrumb.Item>List</Breadcrumb.Item>
-            <Breadcrumb.Item>App</Breadcrumb.Item>
+            <Breadcrumb.Item>App</Breadcrumb.Item> */}
           </Breadcrumb>
           <Content className="myContent">
             <Outlet/>
